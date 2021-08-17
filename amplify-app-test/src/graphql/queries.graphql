@@ -26,3 +26,69 @@ query ListRestaurants(
     nextToken
   }
 }
+query GetCeremony($id: ID!) {
+  getCeremony(id: $id) {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+query ListCeremonys(
+  $filter: ModelCeremonyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCeremonys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      date
+      description
+      hostID
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetHost($id: ID!) {
+  getHost(id: $id) {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListHosts(
+  $filter: ModelHostFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      address
+      Ceremonies {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

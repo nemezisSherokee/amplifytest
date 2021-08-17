@@ -38,3 +38,111 @@ mutation DeleteRestaurant(
     updatedAt
   }
 }
+mutation CreateCeremony(
+  $input: CreateCeremonyInput!
+  $condition: ModelCeremonyConditionInput
+) {
+  createCeremony(input: $input, condition: $condition) {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCeremony(
+  $input: UpdateCeremonyInput!
+  $condition: ModelCeremonyConditionInput
+) {
+  updateCeremony(input: $input, condition: $condition) {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCeremony(
+  $input: DeleteCeremonyInput!
+  $condition: ModelCeremonyConditionInput
+) {
+  deleteCeremony(input: $input, condition: $condition) {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateHost(
+  $input: CreateHostInput!
+  $condition: ModelHostConditionInput
+) {
+  createHost(input: $input, condition: $condition) {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateHost(
+  $input: UpdateHostInput!
+  $condition: ModelHostConditionInput
+) {
+  updateHost(input: $input, condition: $condition) {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteHost(
+  $input: DeleteHostInput!
+  $condition: ModelHostConditionInput
+) {
+  deleteHost(input: $input, condition: $condition) {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}

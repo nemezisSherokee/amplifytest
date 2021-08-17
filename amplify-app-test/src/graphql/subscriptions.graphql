@@ -29,3 +29,93 @@ subscription OnDeleteRestaurant {
     updatedAt
   }
 }
+subscription OnCreateCeremony {
+  onCreateCeremony {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCeremony {
+  onUpdateCeremony {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCeremony {
+  onDeleteCeremony {
+    id
+    date
+    description
+    hostID
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateHost {
+  onCreateHost {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateHost {
+  onUpdateHost {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteHost {
+  onDeleteHost {
+    id
+    name
+    address
+    Ceremonies {
+      items {
+        id
+        date
+        description
+        hostID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
